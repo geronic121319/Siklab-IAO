@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Siklab AI — Image-Based Fire Severity Calorimetry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#15171b; --surface:#1d2025; --surface-2:#24272d;
+    --ember:#f2652c; --ember-deep:#c6362a; --slate:#7b8493;
+    --ink:#eeece6; --ink-dim:#a4a9b2; --line:#2c3037;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --void:#15171b; --surface:#1d2025; --surface-2:#24272d;
+      --ink:#eeece6; --ink-dim:#4e5664; --line:#2c3037;
+    }
+  }
+  *{box-sizing:border-box;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px); height:100%;}
+  body{
+    margin:0; min-height:100%;
+    background:var(--void); color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.eyebrow-font{font-family:'Space Grotesk',system-ui,sans-serif;}
+  a{color:inherit;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
+  img,svg{max-width:100%;}
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:10;
+    padding-top:calc(18px + env(safe-area-inset-top,0px));
+    padding-bottom:18px;
+    background:linear-gradient(var(--void) 70%, transparent);
+  }
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px;}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:600; font-size:1.05rem; letter-spacing:.01em;}
+  .brand img{width:26px; height:auto; flex:none;}
+  nav .domain{color:var(--ink-dim); font-size:.85rem;}
+
+  /* HERO */
+  .hero{padding:64px 0 72px; position:relative; overflow:hidden;}
+  .hero-flame{
+    position:absolute; right:-60px; top:-40px; width:340px; opacity:.5;
+    filter:blur(.5px);
+  }
+  .kicker{color:var(--ember); font-weight:600; font-size:.95rem; margin:0 0 18px;}
+  h1{
+    font-size:clamp(2.1rem, 5vw, 3.4rem); line-height:1.08; font-weight:700;
+    max-width:14ch; margin:0 0 24px; letter-spacing:-.01em;
+  }
+  .lede{max-width:52ch; color:var(--ink-dim); font-size:1.08rem; margin:0 0 34px;}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:13px 24px; border-radius:8px;
+    font-weight:600; font-size:.95rem; text-decoration:none;
+    border:1px solid var(--line);
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--ember),var(--ember-deep)); color:#161311; border:none;}
+  .btn-ghost{color:var(--ink);}
+
+  /* STATS */
+  .stats{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); border-radius:12px;
+    overflow:hidden; margin-top:8px;
+  }
+  .stat{background:var(--surface); padding:26px 22px;}
+  .stat .num{font-family:'Space Grotesk',sans-serif; font-size:1.9rem; font-weight:600; color:var(--ember);}
+  .stat .label{color:var(--ink-dim); font-size:.88rem; margin-top:4px;}
+
+  section{padding:64px 0;}
+  .section-head{max-width:56ch; margin-bottom:40px;}
+  .section-head .kicker{margin-bottom:10px;}
+  h2{font-size:clamp(1.5rem,3vw,2.1rem); font-weight:600; margin:0 0 12px;}
+  .section-head p{color:var(--ink-dim); margin:0;}
+
+  /* PIPELINE */
+  .pipeline{display:flex; flex-direction:column; gap:0;}
+  .step{
+    display:grid; grid-template-columns:56px 1fr; gap:22px;
+    padding:26px 0; border-top:1px solid var(--line);
+  }
+  .step:last-child{border-bottom:1px solid var(--line);}
+  .step .n{
+    font-family:'Space Grotesk',sans-serif; font-size:1rem; color:var(--ember);
+    border:1px solid var(--line); border-radius:50%; width:40px; height:40px;
+    display:flex; align-items:center; justify-content:center; font-weight:600;
+  }
+  .step h3{margin:0 0 6px; font-size:1.15rem; font-weight:600;}
+  .step p{margin:0; color:var(--ink-dim); font-size:.98rem; max-width:56ch;}
+
+  /* ARCHITECTURE */
+  .arch{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  @media (max-width:720px){.arch{grid-template-columns:1fr;}}
+  .arch-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:28px;
+  }
+  .arch-card .stage{color:var(--ember); font-weight:600; font-size:.85rem; margin-bottom:10px;}
+  .arch-card h3{margin:0 0 10px; font-size:1.2rem;}
+  .arch-card ul{margin:14px 0 0; padding-left:18px; color:var(--ink-dim); font-size:.94rem;}
+  .arch-card li{margin-bottom:6px;}
+
+  /* SCOPE TABLE */
+  .scope-table{width:100%; border-collapse:collapse; font-size:.95rem;}
+  .scope-table th{
+    text-align:left; font-family:'Space Grotesk',sans-serif; font-weight:600;
+    font-size:1.02rem; padding:0 16px 14px; border-bottom:1px solid var(--line);
+  }
+  .scope-table td{
+    padding:14px 16px; color:var(--ink-dim); border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  .scope-table td:first-child, .scope-table th:first-child{padding-left:0;}
+  .scope-table tr:last-child td{border-bottom:none;}
+
+  /* AUDIENCE */
+  .audience{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media (max-width:720px){.audience{grid-template-columns:1fr;}}
+  .aud-card h3{font-size:1.05rem; margin:0 0 8px;}
+  .aud-card p{color:var(--ink-dim); font-size:.94rem; margin:0;}
+  .aud-card{border-top:2px solid var(--ember); padding-top:16px;}
+
+  /* RESEARCH */
+  .research{
+    background:var(--surface); border:1px solid var(--line); border-radius:14px;
+    padding:34px; display:grid; grid-template-columns:1.1fr 1fr; gap:34px;
+  }
+  @media (max-width:720px){.research{grid-template-columns:1fr;}}
+  .research h3{margin:0 0 10px; font-size:1.1rem;}
+  .research p{color:var(--ink-dim); font-size:.94rem;}
+  .team-list{list-style:none; margin:0; padding:0; color:var(--ink-dim); font-size:.94rem;}
+  .team-list li{padding:6px 0; border-top:1px solid var(--line);}
+  .team-list li:first-child{border-top:none;}
+
+  footer{border-top:1px solid var(--line); padding:32px 0 calc(32px + env(safe-area-inset-bottom,0px));}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; color:var(--ink-dim); font-size:.86rem;}
+
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">
+      <img src="data:image/png;base64,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" alt="Siklab AI logo">
+      Siklab AI
+    </div>
+    <span class="domain">siklab-aio.org</span>
+  </div>
+</nav>
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Image-based fire calorimetry</p>
+    <h1>Siklab-AIO.org : Image-based Calorimetry Fire Severity Scaling Using Deep Learning Model</h1>
+    <p class="lede">Bystanders already pull out their phones during a fire, and municipal CCTV is already watching the street. Siklab AI is a hybrid system that reads both — grading a fire's severity in real time and sending the nearest Bureau of Fire Protection station a visual intelligence report and GPS location before a human ever finishes dialing.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#how-it-works">See how it works</a>
+      <a class="btn btn-ghost" href="#research">Read the research</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Who this is for</p>
+      <h2>Turning one report into everyone's advantage</h2>
+    </div>
+    <div class="audience">
+      <div class="aud-card">
+        <h3>Fire dispatchers</h3>
+        <p>Real-time severity and GPS telemetry before a truck rolls out, so personnel, apparatus, and water volume can be sized correctly the first time.</p>
+      </div>
+      <div class="aud-card">
+        <h3>Residents</h3>
+        <p>No hotline to memorize and no address to describe under panic just point the camera and let the app do the reporting.</p>
+      </div>
+      <div class="aud-card">
+        <h3>LGUs &amp; DRRMOs</h3>
+        <p>A software-only alternative to installing physical sensor grids across every residential and commercial block.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <div class="research">
+      <div>
+        <h3>About the research</h3>
+        <p>Siklab AI is the subject of an ongoing Software Engineering thesis at National University Lipa, developing a hybrid deep learning system that scales fire severity from bystander phone clips and municipal CCTV feeds alike — estimating a fire's heat release rate from flame geometry and smoke dynamics alone, without thermal sensors or binocular rigs.</p>
+      </div>
+      <div>
+        <h3>Research team</h3>
+        <ul class="team-list">
+          <li>Fegalan, Jeff Sebastian C.</li>
+          <li>Geron, Irwin Huey C.</li>
+          <li>Sebolino, Alfonso Vianney</li>
+          <li>Zapico, Jhon Abhram</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Siklab AI — National University Lipa, BS Computer Science</span>
+    <span>siklab-aio.org</span>
+  </div>
+</footer>
+
+</body>
+</html>
