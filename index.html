@@ -3,223 +3,520 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Siklab AI — Image-Based Fire Severity Calorimetry</title>
+<title>SIKLAB.AIO — Saved Lives And Protecting Property</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="icon" href="data:image/png;base64,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" type="image/png" />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/logo-icon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --void:#15171b; --surface:#1d2025; --surface-2:#24272d;
-    --ember:#f2652c; --ember-deep:#c6362a; --slate:#7b8493;
-    --ink:#eeece6; --ink-dim:#a4a9b2; --line:#2c3037;
-    box-sizing:border-box;
-    padding-top:env(safe-area-inset-top,0px);
-    padding-bottom:env(safe-area-inset-bottom,0px);
+  :root {
+    --bg-dark: #060606;
+    --surface: #111010;
+    --surface-2: #181616;
+    --crimson: #CC1116;
+    --crimson-soft: rgba(204, 17, 22, 0.18);
+    --white: #FFFFFF;
+    --text-muted: #D1CFCC;
+    --text-dim: #9E9B97;
+    --border: rgba(255, 255, 255, 0.1);
   }
-  @media (prefers-color-scheme: light){
-    :root:not([data-theme="dark"]){
-      --void:#15171b; --surface:#1d2025; --surface-2:#24272d;
-      --ink:#eeece6; --ink-dim:#4e5664; --line:#2c3037;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100%;
+    background-color: var(--bg-dark);
+    color: var(--white);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img, svg {
+    max-width: 100%;
+    display: block;
+  }
+
+  /* ==========================================================================
+     HERO SECTION (Figma Node #2:3 — 1440x900)
+     ========================================================================== */
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 900px;
+    height: 100vh;
+    max-height: 1080px;
+    background-color: #060606;
+    background-image:
+      linear-gradient(180deg, rgba(4, 3, 3, 0.25) 0%, rgba(4, 3, 3, 0.03) 45%, rgba(3, 3, 3, 0.95) 100%),
+      linear-gradient(0deg, rgba(26, 4, 3, 0.15), rgba(26, 4, 3, 0.15)),
+      url('assets/hero-bg.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .hero-canvas {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    min-height: 900px;
+    margin: 0 auto;
+    padding: 42px 64px 61px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Header (#2:5 — x:64, y:42, w:1312, h:80) */
+  .site-header {
+    position: relative;
+    width: 100%;
+    max-width: 1312px;
+    height: 80px;
+    display: grid;
+    grid-template-columns: 405px 1fr auto;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .brand-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    height: 72px;
+    margin-top: 4px;
+  }
+
+  .brand-logo {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+  }
+
+  .brand-title {
+    margin-top: 9px; /* y:13 in header vs logo y:4 */
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 28px;
+    color: var(--white);
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  /* Main Navigation (#2:133 — x:405, y:30, gap:34px) */
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    margin-top: -2px;
+  }
+
+  .main-nav a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--white);
+    transition: opacity 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .main-nav a:hover {
+    opacity: 0.8;
+  }
+
+  /* Right Header Actions (Search #2:139, Phone #2:143 & #2:145) */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    padding-right: 33px; /* Matches right edge 1312 - (1158 + 121) = 33px */
+  }
+
+  .search-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 26px;
+    background: rgba(20, 19, 18, 0.8);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 21px; /* 1123 - (1050 + 52) = 21px */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+
+  .search-btn:hover {
+    background: rgba(34, 32, 30, 0.92);
+    transform: translateY(-1px);
+  }
+
+  .phone-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px; /* 1158 - (1123 + 22) = 13px */
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--white);
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+  }
+
+  .phone-link:hover {
+    opacity: 0.85;
+  }
+
+  .phone-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+
+  /* Hero Copy (#2:6 — x:72, y:554, w:1000, h:285) */
+  .hero-copy {
+    position: relative;
+    margin-left: 8px; /* 72px from frame left minus 64px canvas padding */
+    max-width: 1000px;
+    min-height: 285px;
+    margin-top: auto;
+    z-index: 5;
+  }
+
+  .hero-title {
+    margin: 0;
+    max-width: 1000px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 78px;
+    line-height: 85px;
+    letter-spacing: -0.04em;
+    color: var(--white);
+  }
+
+  .hero-subtitle {
+    margin: 27px 0 0 3px; /* y:197 minus 170px heading height = 27px, x:3px */
+    max-width: 630px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+    color: var(--text-muted);
+  }
+
+  /* ==========================================================================
+     LOWER SECTIONS (Harmonized with the Figma Design Theme)
+     ========================================================================== */
+  .section {
+    padding: 88px 64px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    color: var(--crimson);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+  }
+
+  .section-title {
+    font-weight: 700;
+    font-size: clamp(28px, 3.2vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin: 0 0 14px;
+    color: var(--white);
+  }
+
+  .section-desc {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 17px;
+    line-height: 28px;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--crimson);
+    border-radius: 12px;
+    padding: 32px 28px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(204, 17, 22, 0.5);
+  }
+
+  .card h3 {
+    margin: 0 0 12px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--white);
+  }
+
+  .card p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .research-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 44px;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 48px;
+  }
+
+  .research-box h3 {
+    margin: 0 0 14px;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .research-box p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 27px;
+  }
+
+  .team-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: var(--text-muted);
+    font-size: 15px;
+  }
+
+  .team-list li {
+    padding: 11px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .team-list li:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 36px 64px;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    color: var(--text-dim);
+    font-size: 14px;
+  }
+
+  /* ==========================================================================
+     RESPONSIVE BREAKPOINTS
+     ========================================================================== */
+  @media (max-width: 1200px) {
+    .site-header {
+      grid-template-columns: auto 1fr auto;
+      gap: 24px;
+    }
+    .main-nav {
+      justify-content: center;
+      gap: 24px;
+    }
+    .header-actions {
+      padding-right: 0;
+    }
+    .hero-title {
+      font-size: clamp(44px, 6vw, 72px);
+      line-height: 1.09;
     }
   }
-  *{box-sizing:border-box;}
-  html{scroll-padding-top:env(safe-area-inset-top,0px); height:100%;}
-  body{
-    margin:0; min-height:100%;
-    background:var(--void); color:var(--ink);
-    font-family:'Inter',system-ui,sans-serif;
-    line-height:1.6; -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,.eyebrow-font{font-family:'Space Grotesk',system-ui,sans-serif;}
-  a{color:inherit;}
-  .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
-  img,svg{max-width:100%;}
 
-  /* NAV */
-  nav{
-    position:sticky; top:0; z-index:10;
-    padding-top:calc(18px + env(safe-area-inset-top,0px));
-    padding-bottom:18px;
-    background:linear-gradient(var(--void) 70%, transparent);
+  @media (max-width: 900px) {
+    .hero {
+      min-height: 760px;
+      height: auto;
+    }
+    .hero-canvas {
+      min-height: 760px;
+      padding: 28px 24px 56px;
+    }
+    .site-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      height: auto;
+      gap: 16px;
+    }
+    .main-nav {
+      order: 3;
+      width: 100%;
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .hero-copy {
+      margin-left: 0;
+      margin-top: 240px;
+      min-height: auto;
+    }
+    .section {
+      padding: 64px 24px;
+    }
+    .cards-grid,
+    .research-box {
+      grid-template-columns: 1fr;
+    }
+    .research-box {
+      padding: 28px;
+      gap: 28px;
+    }
+    footer {
+      padding: 28px 24px;
+    }
   }
-  nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px;}
-  .brand{display:flex; align-items:center; gap:10px; font-weight:600; font-size:1.05rem; letter-spacing:.01em;}
-  .brand img{width:26px; height:auto; flex:none;}
-  nav .domain{color:var(--ink-dim); font-size:.85rem;}
-
-  /* HERO */
-  .hero{padding:64px 0 72px; position:relative; overflow:hidden;}
-  .hero-flame{
-    position:absolute; right:-60px; top:-40px; width:340px; opacity:.5;
-    filter:blur(.5px);
-  }
-  .kicker{color:var(--ember); font-weight:600; font-size:.95rem; margin:0 0 18px;}
-  h1{
-    font-size:clamp(2.1rem, 5vw, 3.4rem); line-height:1.08; font-weight:700;
-    max-width:14ch; margin:0 0 24px; letter-spacing:-.01em;
-  }
-  .lede{max-width:52ch; color:var(--ink-dim); font-size:1.08rem; margin:0 0 34px;}
-  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
-  .btn{
-    display:inline-block; padding:13px 24px; border-radius:8px;
-    font-weight:600; font-size:.95rem; text-decoration:none;
-    border:1px solid var(--line);
-  }
-  .btn-primary{background:linear-gradient(135deg,var(--ember),var(--ember-deep)); color:#161311; border:none;}
-  .btn-ghost{color:var(--ink);}
-
-  /* STATS */
-  .stats{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
-    background:var(--line); border:1px solid var(--line); border-radius:12px;
-    overflow:hidden; margin-top:8px;
-  }
-  .stat{background:var(--surface); padding:26px 22px;}
-  .stat .num{font-family:'Space Grotesk',sans-serif; font-size:1.9rem; font-weight:600; color:var(--ember);}
-  .stat .label{color:var(--ink-dim); font-size:.88rem; margin-top:4px;}
-
-  section{padding:64px 0;}
-  .section-head{max-width:56ch; margin-bottom:40px;}
-  .section-head .kicker{margin-bottom:10px;}
-  h2{font-size:clamp(1.5rem,3vw,2.1rem); font-weight:600; margin:0 0 12px;}
-  .section-head p{color:var(--ink-dim); margin:0;}
-
-  /* PIPELINE */
-  .pipeline{display:flex; flex-direction:column; gap:0;}
-  .step{
-    display:grid; grid-template-columns:56px 1fr; gap:22px;
-    padding:26px 0; border-top:1px solid var(--line);
-  }
-  .step:last-child{border-bottom:1px solid var(--line);}
-  .step .n{
-    font-family:'Space Grotesk',sans-serif; font-size:1rem; color:var(--ember);
-    border:1px solid var(--line); border-radius:50%; width:40px; height:40px;
-    display:flex; align-items:center; justify-content:center; font-weight:600;
-  }
-  .step h3{margin:0 0 6px; font-size:1.15rem; font-weight:600;}
-  .step p{margin:0; color:var(--ink-dim); font-size:.98rem; max-width:56ch;}
-
-  /* ARCHITECTURE */
-  .arch{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
-  @media (max-width:720px){.arch{grid-template-columns:1fr;}}
-  .arch-card{
-    background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:28px;
-  }
-  .arch-card .stage{color:var(--ember); font-weight:600; font-size:.85rem; margin-bottom:10px;}
-  .arch-card h3{margin:0 0 10px; font-size:1.2rem;}
-  .arch-card ul{margin:14px 0 0; padding-left:18px; color:var(--ink-dim); font-size:.94rem;}
-  .arch-card li{margin-bottom:6px;}
-
-  /* SCOPE TABLE */
-  .scope-table{width:100%; border-collapse:collapse; font-size:.95rem;}
-  .scope-table th{
-    text-align:left; font-family:'Space Grotesk',sans-serif; font-weight:600;
-    font-size:1.02rem; padding:0 16px 14px; border-bottom:1px solid var(--line);
-  }
-  .scope-table td{
-    padding:14px 16px; color:var(--ink-dim); border-bottom:1px solid var(--line);
-    vertical-align:top;
-  }
-  .scope-table td:first-child, .scope-table th:first-child{padding-left:0;}
-  .scope-table tr:last-child td{border-bottom:none;}
-
-  /* AUDIENCE */
-  .audience{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
-  @media (max-width:720px){.audience{grid-template-columns:1fr;}}
-  .aud-card h3{font-size:1.05rem; margin:0 0 8px;}
-  .aud-card p{color:var(--ink-dim); font-size:.94rem; margin:0;}
-  .aud-card{border-top:2px solid var(--ember); padding-top:16px;}
-
-  /* RESEARCH */
-  .research{
-    background:var(--surface); border:1px solid var(--line); border-radius:14px;
-    padding:34px; display:grid; grid-template-columns:1.1fr 1fr; gap:34px;
-  }
-  @media (max-width:720px){.research{grid-template-columns:1fr;}}
-  .research h3{margin:0 0 10px; font-size:1.1rem;}
-  .research p{color:var(--ink-dim); font-size:.94rem;}
-  .team-list{list-style:none; margin:0; padding:0; color:var(--ink-dim); font-size:.94rem;}
-  .team-list li{padding:6px 0; border-top:1px solid var(--line);}
-  .team-list li:first-child{border-top:none;}
-
-  footer{border-top:1px solid var(--line); padding:32px 0 calc(32px + env(safe-area-inset-bottom,0px));}
-  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; color:var(--ink-dim); font-size:.86rem;}
-
-  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="wrap">
-    <div class="brand">
-      <img src="data:image/png;base64,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" alt="Siklab AI logo">
-      Siklab AI
+<header class="hero" id="top">
+  <div class="hero-canvas">
+    <!-- Header (#2:5) -->
+    <div class="site-header">
+      <a href="#top" class="brand-group" aria-label="SIKLAB.AIO Home">
+        <svg class="brand-logo" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M68 36C68 53.6731 53.6731 68 36 68C18.3269 68 4 53.6731 4 36C4 18.3269 18.3269 4 36 4C53.6731 4 68 18.3269 68 36Z" stroke-width="1.6" stroke="white"/>
+          <path d="M25 13C32.3333 10.3333 39.6667 10.3333 47 13L43 27L45 29L59 25C61.6667 32.3333 61.6667 39.6667 59 47L45 43L43 45L47 59C39.6667 61.6667 32.3333 61.6667 25 59L29 45L27 43L13 47C10.3333 39.6667 10.3333 32.3333 13 25L27 29L29 27L25 13Z" stroke-width="1.6" stroke-linejoin="round" stroke="white"/>
+          <path d="M28 39V37C28 32 31 29 36 29C41 29 44 32 44 37V39" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+          <path d="M26 39H46V42H26V39Z" stroke-width="1.5" stroke-linejoin="round" stroke="white"/>
+          <path d="M36 29V35" stroke-width="1.5" stroke-linecap="round" stroke="white"/>
+        </svg>
+        <span class="brand-title">SIKLAB.AIO</span>
+      </a>
+
+      <!-- Main Navigation (#2:133) -->
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#blog">Blog</a>
+        <a href="#all-pages">All Pages</a>
+      </nav>
+
+      <!-- Search & Phone (#2:139, #2:143, #2:145) -->
+      <div class="header-actions">
+        <button class="search-btn" type="button" aria-label="Search">
+          <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="52" height="52" rx="26" fill="#141312" fill-opacity="0.8"/>
+            <path d="M31.6 24.8C31.6 28.5555 28.5555 31.6 24.8 31.6C21.0445 31.6 18 28.5555 18 24.8C18 21.0445 21.0445 18 24.8 18C28.5555 18 31.6 21.0445 31.6 24.8Z" stroke-width="1.8" stroke="white"/>
+            <path d="M30 30L35 35" stroke-width="1.8" stroke-linecap="round" stroke="white"/>
+          </svg>
+        </button>
+
+        <a class="phone-link" href="tel:+17045550127">
+          <svg class="phone-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6.04999 2.75H3.48332C2.65832 2.75 2.19999 3.39167 2.29166 4.21667C3.11666 12.375 9.62499 18.8833 17.7833 19.7083C18.6083 19.8 19.25 19.3417 19.25 18.5167V15.95C19.25 15.4 18.8833 14.9417 18.3333 14.85L15.4 14.2083C15.0333 14.1167 14.575 14.2083 14.3 14.575L13.0167 15.95C10.0833 14.575 7.42499 11.9167 6.04999 8.98333L7.42499 7.7C7.79166 7.425 7.88332 6.96667 7.79166 6.6L7.14999 3.66667C7.05832 3.11667 6.59999 2.75 6.04999 2.75Z" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+          </svg>
+          <span>(704) 555-0127</span>
+        </a>
+      </div>
     </div>
-    <span class="domain">siklab-aio.org</span>
-  </div>
-</nav>
-<header class="hero">
-  <div class="wrap">
-    <p class="kicker">Image-based fire calorimetry</p>
-    <h1>Siklab.AIO - Real-Time Fire Severity Scaling via a Two-Stage YOLOv8 & MobileNetV3-GRU Visual Calorimetry System</h1>
-    <p class="lede">Bystanders already pull out their phones during a fire, and municipal CCTV is already watching the street. Siklab AI is a hybrid system that reads both — grading a fire's severity in real time and sending the nearest Bureau of Fire Protection station a visual intelligence report and GPS location before a human ever finishes dialing.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="#how-it-works">See how it works</a>
-      <a class="btn btn-ghost" href="#research">Read the research</a>
+
+    <!-- Hero Copy (#2:6) -->
+    <div class="hero-copy">
+      <h1 class="hero-title">Saved Lives And<br>Protecting Property</h1>
+      <p class="hero-subtitle">The precautions to prevent potentially harmful fires, surviving and reducing the damage caused by fires.</p>
     </div>
   </div>
 </header>
 
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <p class="kicker">Who this is for</p>
-      <h2>Turning one report into everyone's advantage</h2>
-    </div>
-    <div class="audience">
-      <div class="aud-card">
-        <h3>Fire dispatchers</h3>
-        <p>Real-time severity and GPS telemetry before a truck rolls out, so personnel, apparatus, and water volume can be sized correctly the first time.</p>
-      </div>
-      <div class="aud-card">
-        <h3>Residents</h3>
-        <p>No hotline to memorize and no address to describe under panic just point the camera and let the app do the reporting.</p>
-      </div>
-      <div class="aud-card">
-        <h3>LGUs &amp; DRRMOs</h3>
-        <p>A software-only alternative to installing physical sensor grids across every residential and commercial block.</p>
-      </div>
-    </div>
+<section class="section" id="services">
+  <div class="section-header">
+    <p class="eyebrow">Services &amp; Impact</p>
+    <h2 class="section-title">Turning one report into everyone's advantage</h2>
+    <p class="section-desc">Real-time fire severity scaling via a two-stage YOLOv8 &amp; MobileNetV3-GRU visual calorimetry system.</p>
   </div>
-</section>
-
-<section id="research">
-  <div class="wrap">
-    <div class="research">
-      <div>
-        <h3>About the research</h3>
-        <p>Siklab AI is the subject of an ongoing Software Engineering thesis at National University Lipa, developing a hybrid deep learning system that scales fire severity from bystander phone clips and municipal CCTV feeds alike — estimating a fire's heat release rate from flame geometry and smoke dynamics alone, without thermal sensors or binocular rigs.</p>
-      </div>
-      <div>
-        <h3>Research team</h3>
-        <ul class="team-list">
-          <li>Fegalan, Jeff Sebastian C.</li>
-          <li>Geron, Irwin Huey C.</li>
-          <li>Sebolino, Alfonso Vianney</li>
-          <li>Zapico, Jhon Abrahm</li>
-        </ul>
-      </div>
+  <div class="cards-grid">
+    <div class="card">
+      <h3>Fire dispatchers</h3>
+      <p>Real-time severity and GPS telemetry before a truck rolls out, so personnel, apparatus, and water volume can be sized correctly the first time.</p>
+    </div>
+    <div class="card">
+      <h3>Residents</h3>
+      <p>No hotline to memorize and no address to describe under panic — just point the camera and let the system handle the reporting.</p>
+    </div>
+    <div class="card">
+      <h3>LGUs &amp; DRRMOs</h3>
+      <p>A software-only alternative to installing physical sensor grids across every residential and commercial block.</p>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <span>Siklab AI — National University Lipa, BS Computer Science</span>
-    <span>siklab-aio.org</span>
+<section class="section" id="about">
+  <div class="research-box" id="blog">
+    <div>
+      <p class="eyebrow">About Us</p>
+      <h3>Image-Based Fire Severity Calorimetry</h3>
+      <p>SIKLAB.AIO is an ongoing Software Engineering thesis at National University Lipa, developing a hybrid deep learning system that scales fire severity from bystander phone clips and municipal CCTV feeds alike — estimating a fire's heat release rate from flame geometry and smoke dynamics alone, without thermal sensors or binocular rigs.</p>
+    </div>
+    <div>
+      <p class="eyebrow">Research Team</p>
+      <h3>Contributors</h3>
+      <ul class="team-list">
+        <li>Fegalan, Jeff Sebastian C.</li>
+        <li>Geron, Irwin Huey C.</li>
+        <li>Sebolino, Alfonso Vianney</li>
+        <li>Zapico, Jhon Abrahm</li>
+      </ul>
+    </div>
   </div>
+</section>
+
+<footer id="all-pages">
+  <span>SIKLAB.AIO — National University Lipa, BS Computer Science</span>
+  <span>siklab-aio.org</span>
 </footer>
 
 </body>
